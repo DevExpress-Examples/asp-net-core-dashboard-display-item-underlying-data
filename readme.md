@@ -4,6 +4,9 @@
 - [Index.cshtml](./CS/AspNetCoreDashboard_UnderlyingData/Pages/Index.cshtml)
 
 # ASP.NET Core Dashboard - How to obtain underlying data for the specified dashboard item
+<!-- run online -->
+**[[Run Online]](https://codecentral.devexpress.com/363112809/)**
+<!-- run online end -->
 
 The example shows how to get underlying data for the specified dashboard item. The example uses the [ViewerApiExtension.requestUnderlyingData](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtension?p=netframework#js_devexpress_dashboard_viewerapiextension_requestunderlyingdata) method and passes the component name of the dashboard item and specific parameters to request data. Underlying data is displayed in the `dxDataGrid` widget placed next to the Web Dashboard.
 
