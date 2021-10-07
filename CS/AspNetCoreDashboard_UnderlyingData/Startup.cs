@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace AspNetCoreDashboard_UnderlyingData {
     public class Startup {
@@ -27,16 +28,18 @@ namespace AspNetCoreDashboard_UnderlyingData {
             services
                 .AddResponseCompression()
                 .AddDevExpressControls()
-                .AddMvc()
+                .AddMvc();
 
-                .AddDefaultDashboardController((configurator, serviceProvider)  => {
-                    DashboardFileStorage dashboardFileStorage = new DashboardFileStorage(FileProvider.GetFileInfo("Data/Dashboards").PhysicalPath);
-                    configurator.SetDashboardStorage(dashboardFileStorage);
+            services.AddScoped<DashboardConfigurator>((IServiceProvider serviceProvider) => {
+                DashboardConfigurator configurator = new DashboardConfigurator();
+                DashboardFileStorage dashboardFileStorage = new DashboardFileStorage(FileProvider.GetFileInfo("Data/Dashboards").PhysicalPath);
+                configurator.SetDashboardStorage(dashboardFileStorage);
 
-                    configurator.ConfigureDataConnection += (s, e) => {
-                        e.ConnectionParameters = new ExtractDataSourceConnectionParameters(FileProvider.GetFileInfo("Data/SalesPerson.dat").PhysicalPath);
-                    };
-                });
+                configurator.ConfigureDataConnection += (s, e) => {
+                    e.ConnectionParameters = new ExtractDataSourceConnectionParameters(FileProvider.GetFileInfo("Data/SalesPerson.dat").PhysicalPath);
+                };
+                return configurator;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +57,7 @@ namespace AspNetCoreDashboard_UnderlyingData {
 
             app.UseRouting();
             app.UseEndpoints(endpoints => {
-                EndpointRouteBuilderExtension.MapDashboardRoute(endpoints, "dashboardControl");
+                EndpointRouteBuilderExtension.MapDashboardRoute(endpoints, "api/dashboard", "DefaultDashboard");
                 endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
                     name: "default",
