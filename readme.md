@@ -3,17 +3,23 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T994664)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-*Files to look at*:
-- [underlying-data.js](./CS/AspNetCoreDashboard_UnderlyingData/wwwroot/js/underlying-data.js)
-- [_Layout.cshtml](./CS/AspNetCoreDashboard_UnderlyingData/Pages/_Layout.cshtml)
-- [Index.cshtml](./CS/AspNetCoreDashboard_UnderlyingData/Pages/Index.cshtml)
 
 # ASP.NET Core Dashboard - How to obtain underlying data for the specified dashboard item
 <!-- run online -->
 **[[Run Online]](https://codecentral.devexpress.com/363112809/)**
 <!-- run online end -->
 
-The example shows how to get underlying data for the specified dashboard item. The example uses the [ViewerApiExtension.requestUnderlyingData](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtension?p=netframework#js_devexpress_dashboard_viewerapiextension_requestunderlyingdata) method and passes the component name of the dashboard item and specific parameters to request data. Underlying data is displayed in the `dxDataGrid` widget placed next to the Web Dashboard.
+The example shows how to get underlying data for the specified dashboard item. Underlying data is displayed in the `dxDataGrid` widget placed next to the Web Dashboard.
+
+![](dashboard-and-grid.png)
+
+The example uses the [ViewerApiExtension.requestUnderlyingData](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtension?p=netframework#js_devexpress_dashboard_viewerapiextension_requestunderlyingdata) method and passes the component name of the dashboard item and specific parameters to request data.
+
+## Files to Look At
+- [underlying-data.js](./CS/AspNetCoreDashboard_UnderlyingData/wwwroot/js/underlying-data.js)
+- [_Layout.cshtml](./CS/AspNetCoreDashboard_UnderlyingData/Pages/_Layout.cshtml)
+- [Index.cshtml](./CS/AspNetCoreDashboard_UnderlyingData/Pages/Index.cshtml)
+
 
 ## Documentation
 
