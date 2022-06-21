@@ -5,9 +5,6 @@
 <!-- default badges end -->
 
 # ASP.NET Core Dashboard - How to obtain underlying data for the specified dashboard item
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/363112809/)**
-<!-- run online end -->
 
 The example shows how to get underlying data for the specified dashboard item. Underlying data is displayed in the `dxDataGrid` widget placed next to the Web Dashboard.
 
