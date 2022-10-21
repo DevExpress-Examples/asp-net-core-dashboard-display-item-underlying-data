@@ -1,12 +1,13 @@
-@page
+﻿@page
 
 <div id="detailGrid" style="position:absolute; left:800px; right:0; top:0; bottom:0;"></div>
-<div style="position:absolute; left:0; right:0; top:0; bottom:0;">
-    @(Html.DevExpress().Dashboard("dashboardControl1")
-	.Width("800px")
-	.Height("100%")
-	.ControllerName("DefaultDashboard")
-	.WorkingMode(DevExpress.DashboardWeb.WorkingMode.ViewerOnly)
-	.OnDashboardEndUpdate("onDashboardEndUpdate")
-)
+<div style="position: absolute; left: 0; top: 0; right: 0; bottom: 0;">
+@(Html.DevExpress().Dashboard("dashboardControl1")
+    .ControllerName("DefaultDashboard")
+    .Width("800px")
+    .Height("100%")
+    .WorkingMode(DevExpress.DashboardWeb.WorkingMode.ViewerOnly)
+    .OnDashboardEndUpdate("onDashboardEndUpdate")
+
+ )
 </div>
