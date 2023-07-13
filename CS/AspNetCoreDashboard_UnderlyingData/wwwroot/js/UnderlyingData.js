@@ -1,4 +1,4 @@
-﻿function onDashboardEndUpdate(args) {
+function onDashboardEndUpdate(args) {
     var dashboardControl = args.component;
     // Gets client data displayed in the Card dashboard item.
     var viewerApiExtension = dashboardControl.findExtension('viewerApi');
